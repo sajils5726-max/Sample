@@ -1,0 +1,61 @@
+import java.util.Scanner;
+class Person
+String pname, address, gender;int age;
+Person(String pname1, String address1, String gender1, int age1)pname=pname1;
+addressnaddress1.
+gender=gender1;
+age=age1;
+ん
+class Employee extends Person
+String emp_id, cp_name, qualification;float salary;
+Employee(String pname, string address, String gender, int age, 
+String emp_id, String cp_name, string qualification, 
+float salary)
+this.emp id = emp id;
+super(pname, address, gender, age)s
+this.cp_name = cp_name;
+this.qualification = qualification;this.salary = salary;
+10/23
+class Teacher extends Employee
+int teach id;
+String department, subject;
+Teacher(int teach_id, String department, String subject, String
+emp_id, string cp_name, String qualification, float salary, 
+String pname, String address, String gender, int age)
+super(pname, address, gender, age, emp_id, cp_name, 
+qualification, salary);
+this.teach id - teach id;
+this.department = department;this.subject = subject;
+public void display()
+System.out.printIn("Name:" + pname)；
+System.out.printIn("Gender:" + gender);System.out.printIn("Address: " + address);System.out.printIn("Age: " + age);
+System.out.println("Employee ID: “ + emp_id);System.out.printIn("Company Name:" + cp_name);System.out.printIn("Salary:" + salary);
+System.out.printIn("qualification: " + qualification);
+System.out.println("Teacher ID: " + teach_id);System.out.printIn("Department:" + department);System.out.printIn("Subject Taught: "+ subject);
+class MultilevelDemc
+[
+public static void main(String[] args)
+Scanner s = new Scanner(System.in);
+System.out.print("Enter number of employees:");
+int n=s.nextInt()；s.nextLine()；
+Teacher empobjl]= new Teacher[n];
+for (int i = 0; i< n; i++)
+System. out.printIn("Enter Employee-"+(i+1)+" details");System.out.printIn(".............................");System.out.print("Name:")；
+String pname = s.nextLine()；System.out.print("Gender:");String gender - s.nextline();System.out.print("Address:");String address = s.nextLine();System.out.print("Age:");int age = s.nextInt():
+s.nextline()；
+System.out.print("Employee ID:")；String emp_id = s.nextline()；
+System.out.print("Company name:");String cp_name = s.nextLine()；
+System.out.print("Salary:");float salary - s.nextFloat();s.nextLine();
+System.out.print("Qualification:")；String qualification = s.nextLine();System.out. print("Teacher ID:")；
+int teach_id = s.nextInt();s.nextLine()；
+System. out.print("Department:")；String department =s.nextLine()；
+System.out.print("Subject taught:");String subject = s.nextLine();
+11 / 23
+emp_id, 
+empobj[i]= new Teacher(teach_id, department, subject, 
+cp_name, qualification, salary, pname, address, 
+gender, age);
+System.out.printIn("Employee details")；System.out.printIn(" ---.----------------");for (int i = e; i< n;i++)
+System.out.printIn("Employee-"+(i+1));
+System.out.println("--
+empobilil.displav():
