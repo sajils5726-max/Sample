@@ -28,7 +28,23 @@ class Bill implements Calc
     }
     public void display()
     {
-        System.out.println();
+        System.out.println(pid+"\t"+pname+"\t"+quantity+"\t"+price+"\t"+total);
     }
+}
+class Shope
+{
 
+    public static void main(String []args)
+    {
+        int n,i,order_no;
+        double namount=0;
+        String date;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter Bill details");
+        System.out.println("==================");
+        System.out.println("Oder No.");
+        order_no =s.nextInt();
+        System.out.println("Date:");
+        date=s.next();
+    }
 }
