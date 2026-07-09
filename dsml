@@ -1,0 +1,18 @@
+for i in range (10):
+    print (1)
+fruits = ["apple", "banana", "mango", "orange"]
+for i in fruits:
+    print(i)
+fruits = input("enter fruits name:")
+print(fruits.split())
+
+
+
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+
+
+arr2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr2d)
+print(type(arr2d))
