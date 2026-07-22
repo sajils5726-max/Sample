@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/number1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Number 01"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/number2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Number 02"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Result"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="ADD" />
+
+    <Button
+        android:id="@+id/sub_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="SUBTRACT" />
+
+    <Button
+        android:id="@+id/mul_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="MULTIPLY" />
+
+    <Button
+        android:id="@+id/div_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="DIVIDE" />
+
+    <Button
+        android:id="@+id/clear_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="CLEAR" />
+
+</LinearLayout>
+
+
+
+
+java
+
+package com.example.calculator;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText number1, number2;
+    TextView result_text;
+    Button add_btn, sub_btn, mul_btn, div_btn, clear_btn;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        number1 = findViewById(R.id.number1);
+        number2 = findViewById(R.id.number2);
+        result_text = findViewById(R.id.result_text);
+
+        add_btn = findViewById(R.id.add_btn);
+        sub_btn = findViewById(R.id.sub_btn);
+        mul_btn = findViewById(R.id.mul_btn);
+        div_btn = findViewById(R.id.div_btn);
+        clear_btn = findViewById(R.id.clear_btn);
+
+        // Addition
+        add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (number1.getText().toString().isEmpty() ||
+                        number2.getText().toString().isEmpty()) {
+
+                    Toast.makeText(MainActivity.this,
+                            "Please enter both numbers",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                float num1 = Float.parseFloat(number1.getText().toString());
+                float num2 = Float.parseFloat(number2.getText().toString());
+
+                float sum = num1 + num2;
+
+                result_text.setText("Addition: " + sum);
+
+                Toast.makeText(MainActivity.this,
+                        "Addition: " + sum,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Subtraction
+        sub_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (number1.getText().toString().isEmpty() ||
+                        number2.getText().toString().isEmpty()) {
+
+                    Toast.makeText(MainActivity.this,
+                            "Please enter both numbers",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                float num1 = Float.parseFloat(number1.getText().toString());
+                float num2 = Float.parseFloat(number2.getText().toString());
+
+                float sub = num1 - num2;
+
+                result_text.setText("Subtraction: " + sub);
+
+                Toast.makeText(MainActivity.this,
+                        "Subtraction: " + sub,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Multiplication
+        mul_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (number1.getText().toString().isEmpty() ||
+                        number2.getText().toString().isEmpty()) {
+
+                    Toast.makeText(MainActivity.this,
+                            "Please enter both numbers",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                float num1 = Float.parseFloat(number1.getText().toString());
+                float num2 = Float.parseFloat(number2.getText().toString());
+
+                float mul = num1 * num2;
+
+                result_text.setText("Multiplication: " + mul);
+
+                Toast.makeText(MainActivity.this,
+                        "Multiplication: " + mul,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Division
+        div_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (number1.getText().toString().isEmpty() ||
+                        number2.getText().toString().isEmpty()) {
+
+                    Toast.makeText(MainActivity.this,
+                            "Please enter both numbers",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                float num1 = Float.parseFloat(number1.getText().toString());
+                float num2 = Float.parseFloat(number2.getText().toString());
+
+                if (num2 == 0) {
+                    Toast.makeText(MainActivity.this,
+                            "Cannot divide by zero",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                float div = num1 / num2;
+
+                result_text.setText("Division: " + div);
+
+                Toast.makeText(MainActivity.this,
+                        "Division: " + div,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Clear
+        clear_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                number1.setText("");
+                number2.setText("");
+                result_text.setText("");
+
+                Toast.makeText(MainActivity.this,
+                        "Inputs cleared",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}
